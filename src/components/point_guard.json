@@ -1,0 +1,582 @@
+[
+    {
+      "Index": 25,
+      "Position": "PointGuard",
+      "ReboundPct": 4.1
+    },
+    {
+      "Index": 28,
+      "Position": "PointGuard",
+      "ReboundPct": 6.5
+    },
+    {
+      "Index": 30,
+      "Position": "PointGuard",
+      "ReboundPct": 6.3
+    },
+    {
+      "Index": 38,
+      "Position": "PointGuard",
+      "ReboundPct": 9.3
+    },
+    {
+      "Index": 54,
+      "Position": "PointGuard",
+      "ReboundPct": 8
+    },
+    {
+      "Index": 69,
+      "Position": "PointGuard",
+      "ReboundPct": 4.3
+    },
+    {
+      "Index": 73,
+      "Position": "PointGuard",
+      "ReboundPct": 2.7
+    },
+    {
+      "Index": 77,
+      "Position": "PointGuard",
+      "ReboundPct": 3.8
+    },
+    {
+      "Index": 81,
+      "Position": "PointGuard",
+      "ReboundPct": 7.5
+    },
+    {
+      "Index": 82,
+      "Position": "PointGuard",
+      "ReboundPct": 7.9
+    },
+    {
+      "Index": 83,
+      "Position": "PointGuard",
+      "ReboundPct": 7.1
+    },
+    {
+      "Index": 89,
+      "Position": "PointGuard",
+      "ReboundPct": 9.7
+    },
+    {
+      "Index": 99,
+      "Position": "PointGuard",
+      "ReboundPct": 5
+    },
+    {
+      "Index": 102,
+      "Position": "PointGuard",
+      "ReboundPct": 4.9
+    },
+    {
+      "Index": 103,
+      "Position": "PointGuard",
+      "ReboundPct": 4.3
+    },
+    {
+      "Index": 105,
+      "Position": "PointGuard",
+      "ReboundPct": 6
+    },
+    {
+      "Index": 107,
+      "Position": "PointGuard",
+      "ReboundPct": 2
+    },
+    {
+      "Index": 108,
+      "Position": "PointGuard",
+      "ReboundPct": 2.3
+    },
+    {
+      "Index": 109,
+      "Position": "PointGuard",
+      "ReboundPct": 1.9
+    },
+    {
+      "Index": 119,
+      "Position": "PointGuard",
+      "ReboundPct": 5.1
+    },
+    {
+      "Index": 120,
+      "Position": "PointGuard",
+      "ReboundPct": 7.3
+    },
+    {
+      "Index": 127,
+      "Position": "PointGuard",
+      "ReboundPct": 5.5
+    },
+    {
+      "Index": 128,
+      "Position": "PointGuard",
+      "ReboundPct": 4.3
+    },
+    {
+      "Index": 134,
+      "Position": "PointGuard",
+      "ReboundPct": 6.5
+    },
+    {
+      "Index": 135,
+      "Position": "PointGuard",
+      "ReboundPct": 8.9
+    },
+    {
+      "Index": 136,
+      "Position": "PointGuard",
+      "ReboundPct": 6.3
+    },
+    {
+      "Index": 142,
+      "Position": "PointGuard",
+      "ReboundPct": 7.3
+    },
+    {
+      "Index": 150,
+      "Position": "PointGuard",
+      "ReboundPct": 4.3
+    },
+    {
+      "Index": 151,
+      "Position": "PointGuard",
+      "ReboundPct": 5.3
+    },
+    {
+      "Index": 152,
+      "Position": "PointGuard",
+      "ReboundPct": 3.8
+    },
+    {
+      "Index": 156,
+      "Position": "PointGuard",
+      "ReboundPct": 6.2
+    },
+    {
+      "Index": 158,
+      "Position": "PointGuard",
+      "ReboundPct": 4.9
+    },
+    {
+      "Index": 160,
+      "Position": "PointGuard",
+      "ReboundPct": 5.9
+    },
+    {
+      "Index": 162,
+      "Position": "PointGuard",
+      "ReboundPct": 7.1
+    },
+    {
+      "Index": 163,
+      "Position": "PointGuard",
+      "ReboundPct": 5.3
+    },
+    {
+      "Index": 164,
+      "Position": "PointGuard",
+      "ReboundPct": 4.2
+    },
+    {
+      "Index": 165,
+      "Position": "PointGuard",
+      "ReboundPct": 5.5
+    },
+    {
+      "Index": 170,
+      "Position": "PointGuard",
+      "ReboundPct": 6
+    },
+    {
+      "Index": 173,
+      "Position": "PointGuard",
+      "ReboundPct": 5.6
+    },
+    {
+      "Index": 174,
+      "Position": "PointGuard",
+      "ReboundPct": 5.7
+    },
+    {
+      "Index": 175,
+      "Position": "PointGuard",
+      "ReboundPct": 5.4
+    },
+    {
+      "Index": 184,
+      "Position": "PointGuard",
+      "ReboundPct": 5.5
+    },
+    {
+      "Index": 200,
+      "Position": "PointGuard",
+      "ReboundPct": 5.8
+    },
+    {
+      "Index": 210,
+      "Position": "PointGuard",
+      "ReboundPct": 12.2
+    },
+    {
+      "Index": 214,
+      "Position": "PointGuard",
+      "ReboundPct": 6.8
+    },
+    {
+      "Index": 220,
+      "Position": "PointGuard",
+      "ReboundPct": 5.3
+    },
+    {
+      "Index": 238,
+      "Position": "PointGuard",
+      "ReboundPct": 6.2
+    },
+    {
+      "Index": 242,
+      "Position": "PointGuard",
+      "ReboundPct": 6.4
+    },
+    {
+      "Index": 250,
+      "Position": "PointGuard",
+      "ReboundPct": 5.5
+    },
+    {
+      "Index": 264,
+      "Position": "PointGuard",
+      "ReboundPct": 5
+    },
+    {
+      "Index": 265,
+      "Position": "PointGuard",
+      "ReboundPct": 0
+    },
+    {
+      "Index": 266,
+      "Position": "PointGuard",
+      "ReboundPct": 13.1
+    },
+    {
+      "Index": 267,
+      "Position": "PointGuard",
+      "ReboundPct": 6.2
+    },
+    {
+      "Index": 268,
+      "Position": "PointGuard",
+      "ReboundPct": 4.3
+    },
+    {
+      "Index": 273,
+      "Position": "PointGuard",
+      "ReboundPct": 5.9
+    },
+    {
+      "Index": 274,
+      "Position": "PointGuard",
+      "ReboundPct": 5.7
+    },
+    {
+      "Index": 275,
+      "Position": "PointGuard",
+      "ReboundPct": 6.6
+    },
+    {
+      "Index": 282,
+      "Position": "PointGuard",
+      "ReboundPct": 7.4
+    },
+    {
+      "Index": 292,
+      "Position": "PointGuard",
+      "ReboundPct": 5
+    },
+    {
+      "Index": 308,
+      "Position": "PointGuard",
+      "ReboundPct": 3.3
+    },
+    {
+      "Index": 313,
+      "Position": "PointGuard",
+      "ReboundPct": 6
+    },
+    {
+      "Index": 325,
+      "Position": "PointGuard",
+      "ReboundPct": 7.6
+    },
+    {
+      "Index": 326,
+      "Position": "PointGuard",
+      "ReboundPct": 8.1
+    },
+    {
+      "Index": 327,
+      "Position": "PointGuard",
+      "ReboundPct": 6.2
+    },
+    {
+      "Index": 333,
+      "Position": "PointGuard",
+      "ReboundPct": 7.3
+    },
+    {
+      "Index": 334,
+      "Position": "PointGuard",
+      "ReboundPct": 0
+    },
+    {
+      "Index": 337,
+      "Position": "PointGuard",
+      "ReboundPct": 6.1
+    },
+    {
+      "Index": 348,
+      "Position": "PointGuard",
+      "ReboundPct": 6.5
+    },
+    {
+      "Index": 369,
+      "Position": "PointGuard",
+      "ReboundPct": 4.6
+    },
+    {
+      "Index": 382,
+      "Position": "PointGuard",
+      "ReboundPct": 7
+    },
+    {
+      "Index": 384,
+      "Position": "PointGuard",
+      "ReboundPct": 7.4
+    },
+    {
+      "Index": 388,
+      "Position": "PointGuard",
+      "ReboundPct": 6.6
+    },
+    {
+      "Index": 391,
+      "Position": "PointGuard",
+      "ReboundPct": 5.2
+    },
+    {
+      "Index": 392,
+      "Position": "PointGuard",
+      "ReboundPct": 5
+    },
+    {
+      "Index": 422,
+      "Position": "PointGuard",
+      "ReboundPct": 4
+    },
+    {
+      "Index": 426,
+      "Position": "PointGuard",
+      "ReboundPct": 8.8
+    },
+    {
+      "Index": 428,
+      "Position": "PointGuard",
+      "ReboundPct": 5.7
+    },
+    {
+      "Index": 429,
+      "Position": "PointGuard",
+      "ReboundPct": 5.4
+    },
+    {
+      "Index": 430,
+      "Position": "PointGuard",
+      "ReboundPct": 6.5
+    },
+    {
+      "Index": 431,
+      "Position": "PointGuard",
+      "ReboundPct": 8.7
+    },
+    {
+      "Index": 432,
+      "Position": "PointGuard",
+      "ReboundPct": 7.1
+    },
+    {
+      "Index": 448,
+      "Position": "PointGuard",
+      "ReboundPct": 4.5
+    },
+    {
+      "Index": 450,
+      "Position": "PointGuard",
+      "ReboundPct": 5.8
+    },
+    {
+      "Index": 451,
+      "Position": "PointGuard",
+      "ReboundPct": 3.7
+    },
+    {
+      "Index": 452,
+      "Position": "PointGuard",
+      "ReboundPct": 6.5
+    },
+    {
+      "Index": 461,
+      "Position": "PointGuard",
+      "ReboundPct": 5.2
+    },
+    {
+      "Index": 464,
+      "Position": "PointGuard",
+      "ReboundPct": 5.7
+    },
+    {
+      "Index": 465,
+      "Position": "PointGuard",
+      "ReboundPct": 10.4
+    },
+    {
+      "Index": 466,
+      "Position": "PointGuard",
+      "ReboundPct": 6.4
+    },
+    {
+      "Index": 470,
+      "Position": "PointGuard",
+      "ReboundPct": 10
+    },
+    {
+      "Index": 471,
+      "Position": "PointGuard",
+      "ReboundPct": 7.2
+    },
+    {
+      "Index": 474,
+      "Position": "PointGuard",
+      "ReboundPct": 6.7
+    },
+    {
+      "Index": 479,
+      "Position": "PointGuard",
+      "ReboundPct": 5.5
+    },
+    {
+      "Index": 487,
+      "Position": "PointGuard",
+      "ReboundPct": 4.9
+    },
+    {
+      "Index": 493,
+      "Position": "PointGuard",
+      "ReboundPct": 6.6
+    },
+    {
+      "Index": 506,
+      "Position": "PointGuard",
+      "ReboundPct": 6.8
+    },
+    {
+      "Index": 511,
+      "Position": "PointGuard",
+      "ReboundPct": 3.1
+    },
+    {
+      "Index": 512,
+      "Position": "PointGuard",
+      "ReboundPct": 7
+    },
+    {
+      "Index": 516,
+      "Position": "PointGuard",
+      "ReboundPct": 4.4
+    },
+    {
+      "Index": 535,
+      "Position": "PointGuard",
+      "ReboundPct": 5.6
+    },
+    {
+      "Index": 536,
+      "Position": "PointGuard",
+      "ReboundPct": 4.6
+    },
+    {
+      "Index": 540,
+      "Position": "PointGuard",
+      "ReboundPct": 8.1
+    },
+    {
+      "Index": 542,
+      "Position": "PointGuard",
+      "ReboundPct": 2.7
+    },
+    {
+      "Index": 549,
+      "Position": "PointGuard",
+      "ReboundPct": 6.2
+    },
+    {
+      "Index": 550,
+      "Position": "PointGuard",
+      "ReboundPct": 6.5
+    },
+    {
+      "Index": 553,
+      "Position": "PointGuard",
+      "ReboundPct": 4.8
+    },
+    {
+      "Index": 554,
+      "Position": "PointGuard",
+      "ReboundPct": 7
+    },
+    {
+      "Index": 555,
+      "Position": "PointGuard",
+      "ReboundPct": 4.8
+    },
+    {
+      "Index": 556,
+      "Position": "PointGuard",
+      "ReboundPct": 7.6
+    },
+    {
+      "Index": 558,
+      "Position": "PointGuard",
+      "ReboundPct": 17.1
+    },
+    {
+      "Index": 560,
+      "Position": "PointGuard",
+      "ReboundPct": 5.9
+    },
+    {
+      "Index": 565,
+      "Position": "PointGuard",
+      "ReboundPct": 5.1
+    },
+    {
+      "Index": 566,
+      "Position": "PointGuard",
+      "ReboundPct": 5.1
+    },
+    {
+      "Index": 567,
+      "Position": "PointGuard",
+      "ReboundPct": 5.1
+    },
+    {
+      "Index": 585,
+      "Position": "PointGuard",
+      "ReboundPct": 6.1
+    },
+    {
+      "Index": 587,
+      "Position": "PointGuard",
+      "ReboundPct": 7.1
+    }
+   ]

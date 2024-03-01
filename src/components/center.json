@@ -1,0 +1,567 @@
+[
+    {
+      "Index": 4,
+      "Position": "Center",
+      "ReboundPct": 14.2
+    },
+    {
+      "Index": 6,
+      "Position": "Center",
+      "ReboundPct": 16
+    },
+    {
+      "Index": 7,
+      "Position": "Center",
+      "ReboundPct": 17.4
+    },
+    {
+      "Index": 12,
+      "Position": "Center",
+      "ReboundPct": 15
+    },
+    {
+      "Index": 21,
+      "Position": "Center",
+      "ReboundPct": 14.4
+    },
+    {
+      "Index": 24,
+      "Position": "Center",
+      "ReboundPct": 17.8
+    },
+    {
+      "Index": 39,
+      "Position": "Center",
+      "ReboundPct": 15.6
+    },
+    {
+      "Index": 51,
+      "Position": "Center",
+      "ReboundPct": 17.2
+    },
+    {
+      "Index": 53,
+      "Position": "Center",
+      "ReboundPct": 17.1
+    },
+    {
+      "Index": 58,
+      "Position": "Center",
+      "ReboundPct": 21.7
+    },
+    {
+      "Index": 59,
+      "Position": "Center",
+      "ReboundPct": 21.7
+    },
+    {
+      "Index": 60,
+      "Position": "Center",
+      "ReboundPct": 0
+    },
+    {
+      "Index": 86,
+      "Position": "Center",
+      "ReboundPct": 18.5
+    },
+    {
+      "Index": 94,
+      "Position": "Center",
+      "ReboundPct": 13.8
+    },
+    {
+      "Index": 95,
+      "Position": "Center",
+      "ReboundPct": 22.6
+    },
+    {
+      "Index": 110,
+      "Position": "Center",
+      "ReboundPct": 18.2
+    },
+    {
+      "Index": 111,
+      "Position": "Center",
+      "ReboundPct": 17.9
+    },
+    {
+      "Index": 112,
+      "Position": "Center",
+      "ReboundPct": 19.5
+    },
+    {
+      "Index": 122,
+      "Position": "Center",
+      "ReboundPct": 17.3
+    },
+    {
+      "Index": 123,
+      "Position": "Center",
+      "ReboundPct": 14.4
+    },
+    {
+      "Index": 125,
+      "Position": "Center",
+      "ReboundPct": 21.1
+    },
+    {
+      "Index": 137,
+      "Position": "Center",
+      "ReboundPct": 25.3
+    },
+    {
+      "Index": 148,
+      "Position": "Center",
+      "ReboundPct": 17
+    },
+    {
+      "Index": 161,
+      "Position": "Center",
+      "ReboundPct": 16.1
+    },
+    {
+      "Index": 171,
+      "Position": "Center",
+      "ReboundPct": 11.4
+    },
+    {
+      "Index": 177,
+      "Position": "Center",
+      "ReboundPct": 10.4
+    },
+    {
+      "Index": 178,
+      "Position": "Center",
+      "ReboundPct": 17.4
+    },
+    {
+      "Index": 189,
+      "Position": "Center",
+      "ReboundPct": 21.8
+    },
+    {
+      "Index": 195,
+      "Position": "Center",
+      "ReboundPct": 18.7
+    },
+    {
+      "Index": 207,
+      "Position": "Center",
+      "ReboundPct": 11.8
+    },
+    {
+      "Index": 208,
+      "Position": "Center",
+      "ReboundPct": 12.8
+    },
+    {
+      "Index": 213,
+      "Position": "Center",
+      "ReboundPct": 11.2
+    },
+    {
+      "Index": 221,
+      "Position": "Center",
+      "ReboundPct": 15.3
+    },
+    {
+      "Index": 227,
+      "Position": "Center",
+      "ReboundPct": 15.3
+    },
+    {
+      "Index": 229,
+      "Position": "Center",
+      "ReboundPct": 20.4
+    },
+    {
+      "Index": 231,
+      "Position": "Center",
+      "ReboundPct": 12.4
+    },
+    {
+      "Index": 232,
+      "Position": "Center",
+      "ReboundPct": 12.5
+    },
+    {
+      "Index": 233,
+      "Position": "Center",
+      "ReboundPct": 10
+    },
+    {
+      "Index": 237,
+      "Position": "Center",
+      "ReboundPct": 12.8
+    },
+    {
+      "Index": 239,
+      "Position": "Center",
+      "ReboundPct": 17.4
+    },
+    {
+      "Index": 245,
+      "Position": "Center",
+      "ReboundPct": 14.4
+    },
+    {
+      "Index": 247,
+      "Position": "Center",
+      "ReboundPct": 11.8
+    },
+    {
+      "Index": 249,
+      "Position": "Center",
+      "ReboundPct": 23.5
+    },
+    {
+      "Index": 270,
+      "Position": "Center",
+      "ReboundPct": 16.8
+    },
+    {
+      "Index": 284,
+      "Position": "Center",
+      "ReboundPct": 19.5
+    },
+    {
+      "Index": 286,
+      "Position": "Center",
+      "ReboundPct": 14.8
+    },
+    {
+      "Index": 293,
+      "Position": "Center",
+      "ReboundPct": 24.2
+    },
+    {
+      "Index": 295,
+      "Position": "Center",
+      "ReboundPct": 9.5
+    },
+    {
+      "Index": 296,
+      "Position": "Center",
+      "ReboundPct": 17.4
+    },
+    {
+      "Index": 304,
+      "Position": "Center",
+      "ReboundPct": 16.4
+    },
+    {
+      "Index": 311,
+      "Position": "Center",
+      "ReboundPct": 15.2
+    },
+    {
+      "Index": 317,
+      "Position": "Center",
+      "ReboundPct": 17.8
+    },
+    {
+      "Index": 328,
+      "Position": "Center",
+      "ReboundPct": 20
+    },
+    {
+      "Index": 329,
+      "Position": "Center",
+      "ReboundPct": 15.2
+    },
+    {
+      "Index": 330,
+      "Position": "Center",
+      "ReboundPct": 9.6
+    },
+    {
+      "Index": 331,
+      "Position": "Center",
+      "ReboundPct": 12.3
+    },
+    {
+      "Index": 338,
+      "Position": "Center",
+      "ReboundPct": 15.2
+    },
+    {
+      "Index": 339,
+      "Position": "Center",
+      "ReboundPct": 11.8
+    },
+    {
+      "Index": 340,
+      "Position": "Center",
+      "ReboundPct": 24.2
+    },
+    {
+      "Index": 358,
+      "Position": "Center",
+      "ReboundPct": 18.1
+    },
+    {
+      "Index": 364,
+      "Position": "Center",
+      "ReboundPct": 19.8
+    },
+    {
+      "Index": 373,
+      "Position": "Center",
+      "ReboundPct": 17
+    },
+    {
+      "Index": 381,
+      "Position": "Center",
+      "ReboundPct": 13.1
+    },
+    {
+      "Index": 386,
+      "Position": "Center",
+      "ReboundPct": 10.7
+    },
+    {
+      "Index": 397,
+      "Position": "Center",
+      "ReboundPct": 21.3
+    },
+    {
+      "Index": 398,
+      "Position": "Center",
+      "ReboundPct": 15.9
+    },
+    {
+      "Index": 399,
+      "Position": "Center",
+      "ReboundPct": 14.1
+    },
+    {
+      "Index": 400,
+      "Position": "Center",
+      "ReboundPct": 18
+    },
+    {
+      "Index": 401,
+      "Position": "Center",
+      "ReboundPct": 12.6
+    },
+    {
+      "Index": 404,
+      "Position": "Center",
+      "ReboundPct": 18.6
+    },
+    {
+      "Index": 405,
+      "Position": "Center",
+      "ReboundPct": 17.8
+    },
+    {
+      "Index": 406,
+      "Position": "Center",
+      "ReboundPct": 19.7
+    },
+    {
+      "Index": 411,
+      "Position": "Center",
+      "ReboundPct": 19.2
+    },
+    {
+      "Index": 412,
+      "Position": "Center",
+      "ReboundPct": 16.5
+    },
+    {
+      "Index": 413,
+      "Position": "Center",
+      "ReboundPct": 11.7
+    },
+    {
+      "Index": 415,
+      "Position": "Center",
+      "ReboundPct": 13
+    },
+    {
+      "Index": 416,
+      "Position": "Center",
+      "ReboundPct": 11.7
+    },
+    {
+      "Index": 417,
+      "Position": "Center",
+      "ReboundPct": 10.5
+    },
+    {
+      "Index": 419,
+      "Position": "Center",
+      "ReboundPct": 17.7
+    },
+    {
+      "Index": 420,
+      "Position": "Center",
+      "ReboundPct": 14
+    },
+    {
+      "Index": 434,
+      "Position": "Center",
+      "ReboundPct": 16.2
+    },
+    {
+      "Index": 435,
+      "Position": "Center",
+      "ReboundPct": 15.6
+    },
+    {
+      "Index": 436,
+      "Position": "Center",
+      "ReboundPct": 15.8
+    },
+    {
+      "Index": 437,
+      "Position": "Center",
+      "ReboundPct": 15.1
+    },
+    {
+      "Index": 438,
+      "Position": "Center",
+      "ReboundPct": 11.1
+    },
+    {
+      "Index": 439,
+      "Position": "Center",
+      "ReboundPct": 10
+    },
+    {
+      "Index": 440,
+      "Position": "Center",
+      "ReboundPct": 13.3
+    },
+    {
+      "Index": 441,
+      "Position": "Center",
+      "ReboundPct": 14.9
+    },
+    {
+      "Index": 445,
+      "Position": "Center",
+      "ReboundPct": 13.3
+    },
+    {
+      "Index": 456,
+      "Position": "Center",
+      "ReboundPct": 17.8
+    },
+    {
+      "Index": 476,
+      "Position": "Center",
+      "ReboundPct": 17
+    },
+    {
+      "Index": 495,
+      "Position": "Center",
+      "ReboundPct": 13.6
+    },
+    {
+      "Index": 497,
+      "Position": "Center",
+      "ReboundPct": 16.2
+    },
+    {
+      "Index": 498,
+      "Position": "Center",
+      "ReboundPct": 15.9
+    },
+    {
+      "Index": 504,
+      "Position": "Center",
+      "ReboundPct": 15.8
+    },
+    {
+      "Index": 505,
+      "Position": "Center",
+      "ReboundPct": 14
+    },
+    {
+      "Index": 508,
+      "Position": "Center",
+      "ReboundPct": 21.6
+    },
+    {
+      "Index": 509,
+      "Position": "Center",
+      "ReboundPct": 13.7
+    },
+    {
+      "Index": 510,
+      "Position": "Center",
+      "ReboundPct": 23
+    },
+    {
+      "Index": 522,
+      "Position": "Center",
+      "ReboundPct": 16.9
+    },
+    {
+      "Index": 524,
+      "Position": "Center",
+      "ReboundPct": 6.6
+    },
+    {
+      "Index": 529,
+      "Position": "Center",
+      "ReboundPct": 19.4
+    },
+    {
+      "Index": 534,
+      "Position": "Center",
+      "ReboundPct": 13
+    },
+    {
+      "Index": 538,
+      "Position": "Center",
+      "ReboundPct": 20.8
+    },
+    {
+      "Index": 541,
+      "Position": "Center",
+      "ReboundPct": 16.1
+    },
+    {
+      "Index": 545,
+      "Position": "Center",
+      "ReboundPct": 19.6
+    },
+    {
+      "Index": 557,
+      "Position": "Center",
+      "ReboundPct": 13
+    },
+    {
+      "Index": 561,
+      "Position": "Center",
+      "ReboundPct": 24
+    },
+    {
+      "Index": 564,
+      "Position": "Center",
+      "ReboundPct": 22.4
+    },
+    {
+      "Index": 581,
+      "Position": "Center",
+      "ReboundPct": 16.2
+    },
+    {
+      "Index": 591,
+      "Position": "Center",
+      "ReboundPct": 13.2
+    },
+    {
+      "Index": 592,
+      "Position": "Center",
+      "ReboundPct": 17.6
+    },
+    {
+      "Index": 594,
+      "Position": "Center",
+      "ReboundPct": 14.3
+    }
+   ]

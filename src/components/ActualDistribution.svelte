@@ -26,8 +26,8 @@
   }
 
   async function loadData() {
-    const centers = await d3.csv('/center.csv');
-    const pointGuards = await d3.csv('/point_guard.csv');
+    const centers = centersData;
+    const pointGuards = pointGuardsData;
 
     const data = centers.map(d => ({...d, type: 'center'}))
       .concat(pointGuards.map(d => ({...d, type: 'pointGuard'})));
