@@ -1,10 +1,5 @@
 <script>
-  import { onMount } from 'svelte';
-  import 'mathjax/es5/tex-mml-chtml.js';
 
-  onMount(() => {
-    MathJax.typesetPromise().catch((err) => console.error('MathJax typesetPromise failed:', err));
-  });
 </script>
 ```
 <main>
