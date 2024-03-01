@@ -1,5 +1,21 @@
 <script>
+  import { onMount } from 'svelte';
+  import katex from 'katex';
+  import 'katex/dist/katex.min.css';
 
+  let meanContainer;
+  let stdDevContainer;
+
+  onMount(() => {
+    const meanLatex = '\\mu_{\\text{MLE}} = \\frac{1}{n} \\sum_{i=1}^{n} x^{(i)}';
+    const stdDevLatex = '\\sigma_{\\text{MLE}} = \\sqrt{\\frac{1}{n} \\sum_{i=1}^{n} \\left( x^{(i)} - \\mu_{\\text{MLE}} \\right)^2}';
+
+    katex.render(meanLatex, meanContainer);
+    katex.render(stdDevLatex, stdDevContainer);
+  });
+ 
+
+ 
 </script>
 ```
 <main>
@@ -21,14 +37,12 @@
     </p>
 
     <div>
-        <div>
-            {`\\(\\mu_{\\text{MLE}} = \\frac{1}{n} \\sum_{i=1}^{n} x^{(i)}\\)`}
-        </div>
-
-
-        <div>
-            {`\\(\\sigma_{\\text{MLE}} = \\sqrt{\\frac{1}{n} \\sum_{i=1}^{n} \\left( x^{(i)} - \\mu_{\\text{MLE}} \\right)^2}\\)`}
-        </div>
+        <div class="formula">
+            <span bind:this={meanContainer}></span>
+          </div>
+          <div class="formula">
+            <span bind:this={stdDevContainer}></span>
+          </div>
     </div>
 
     <p> 
@@ -44,5 +58,7 @@
 </main>
   
   <style>
-    /* Write your CSS here */
+      .formula {
+    margin-bottom: 1rem;
+  }
   </style>
