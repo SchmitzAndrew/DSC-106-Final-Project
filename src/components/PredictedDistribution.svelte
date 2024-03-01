@@ -5,7 +5,7 @@
   import * as d3 from 'd3';
   import { writable } from 'svelte/store';
 
-  const width = 960;
+  const width = 950;
   const height = 500;
   const radius = 2;
   const margin = { top: 10, right: 30, bottom: 30, left: 30 };
