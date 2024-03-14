@@ -5,7 +5,7 @@
   import pointGuardsData from './point_guard.json';
 
   let svg;
-  let showDistribution = false;
+  let showDistribution = true;
   
 
   // Function to calculate mean
