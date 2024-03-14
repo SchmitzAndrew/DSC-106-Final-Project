@@ -5,6 +5,8 @@
   import pointGuardsData from './point_guard.json';
 
   let svg;
+  let showDistribution = true;
+  
 
   // Function to calculate mean
   function mean(data) {
@@ -22,7 +24,7 @@
     for (let i = xScale.domain()[0]; i <= xScale.domain()[1]; i += (xScale.domain()[1] - xScale.domain()[0]) / 100) {
       const x = i;
       const y = (1 / (stdDev * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * Math.pow((x - mean) / stdDev, 2));
-      points.push({x: xScale(x), y: height - y * height * 10}); // Adjust scaling factor as needed
+      points.push({x: xScale(x), y: height - y * height * 5}); // Adjust scaling factor as needed
     }
     return points;
   }
@@ -82,6 +84,7 @@
 
     // Draw Gaussian lines for centers
     svg.append("path")
+    .attr("class", "gaussian-line")
       .datum(centersGaussian)
       .attr("fill", "none")
       .attr("stroke", "#69b3a2")
@@ -93,6 +96,7 @@
 
     // Draw Gaussian lines for point guards
     svg.append("path")
+    .attr("class", "gaussian-line")
       .datum(pointGuardsGaussian)
       .attr("fill", "none")
       .attr("stroke", "#404080")
@@ -102,16 +106,33 @@
           .y(d => d.y)
       );
   }
-
+  function toggleDistribution() {
+    showDistribution = !showDistribution;
+    // Select the Gaussian paths and set their visibility based on the showDistribution state
+    svg.selectAll(".gaussian-line")
+       .style("display", showDistribution ? "block" : "none");
+  }
   onMount(() => {
-    loadData();
+    loadData().then(() => {
+      // Initially set the Gaussian paths to be hidden
+      toggleDistribution();
+    });
   });
 </script>
 
 <main>
+  <button on:click={toggleDistribution}>
+    {showDistribution ? 'Hide' : 'Show'} Distribution
+  </button>
   <div id="plinkoPlot"></div>
 </main>
 
 <style>
-  /* Style as needed */
+  /* You can style your button here */
+  button {
+    /* Example style */
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
 </style>
