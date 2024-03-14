@@ -125,7 +125,35 @@ function parseRow(d) {
   svg.append("g")
     .attr("transform", `translate(0,${height - margin.bottom})`)
     .call(d3.axisBottom(x));
+   const legend = svg.append('g')
+  .attr('class', 'legend')
+  .attr('transform', `translate(${width - margin.right - 100}, ${margin.top})`);
 
+  legend.append('rect')
+  .attr('width', 18)
+  .attr('height', 18)
+  .attr('fill', '#404080');
+
+legend.append('text')
+  .attr('x', 24)
+  .attr('y', 9)
+  .attr('dy', '0.35em')
+  .style('text-anchor', 'start')
+  .text('Point Guards');
+
+// Add the second legend item for centers
+legend.append('rect')
+  .attr('width', 18)
+  .attr('height', 18)
+  .attr('y', 30) // Offset the second legend item
+  .attr('fill', '#69b3a2');
+
+legend.append('text')
+  .attr('x', 24)
+  .attr('y', 39)
+  .attr('dy', '0.35em')
+  .style('text-anchor', 'start')
+  .text('Centers');
   const line = d3.line()
     .x(d => x(d.x))
     .y(d => y(d.y));
