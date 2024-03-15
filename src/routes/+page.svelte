@@ -1,5 +1,6 @@
 <script>
   import { base } from '$app/paths';
+  import * as d3 from 'd3';
   import { onMount } from 'svelte';
   import * as d3 from 'd3';
   import PredictedDistribution from '../components/PredictedDistribution.svelte';
@@ -264,5 +265,11 @@
     vertical-align: middle; /* Align the logo vertically with the text */
     margin-right: 8px; /* Add some spacing to the right of the logo */
     border-radius: 20%; /* Make the logo circular */    
+  }
+  
+  /* Full-page background color and font style adjustments */
+  body {
+    background-color: #f0f0f0; /* Light grey background for the entire page */
+    font-family: 'Roboto', sans-serif; /* Use Roboto font for all text */
   }
 </style>

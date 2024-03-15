@@ -1,12 +1,21 @@
 <script>
   import * as d3 from 'd3';
   import { onMount } from 'svelte';
-  import centersData from './center.json';
-  import pointGuardsData from './point_guard.json';
+  import  {base } from  '$app/paths';
 
   let svg;
   let showDistribution = true;
-  
+
+  let centersData = [];
+  let pointGuardsData = [];
+
+  onMount(async () => {
+    const centersResponse = await fetch(`${base}/center.json`);
+    centersData = await centersResponse.json();
+
+    const pointGuardsResponse = await fetch(`${base}/point_guard.json`);
+    pointGuardsData = await pointGuardsResponse.json();
+  });
 
   // Function to calculate mean
   function mean(data) {
