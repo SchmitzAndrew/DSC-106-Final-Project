@@ -13,6 +13,8 @@
     const PY0 = 0.49; // Replace with your actual value for P(Y=0)
     let predictionText = '';
     let centersMean, centersStdDev, pointGuardsMean, pointGuardsStdDev;
+    let centers = [];
+    let pointGuards = [];
     // Function to calculate mean
     function mean(data) {
       return d3.mean(data, d => +d.ReboundPct);
@@ -33,10 +35,18 @@
   }
   return points;
 }
+
     let isLoadingData = true;
     async function loadData() {
-      const centers = await d3.csv('/center.csv');
-      const pointGuards = await d3.csv('/point_guard.csv');
+      const centerRes = await fetch('/center.csv');
+      const centerCsv = await centerRes.text();
+      centers = d3.csvParse(centerCsv, d3.autoType);
+      console.log(centers)
+
+      const pgRes = await fetch('/point_guard.csv'); // Make sure this is the correct file
+      const pgCsv = await pgRes.text();
+      pointGuards = d3.csvParse(pgCsv, d3.autoType);
+      console.log(pointGuards)
   
       const data = centers.map(d => ({...d, type: 'center'}))
         .concat(pointGuards.map(d => ({...d, type: 'pointGuard'})));
@@ -216,10 +226,10 @@ function gaussianPDF(x, mean, stdDev) {
   return (1 / (stdDev * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * Math.pow((x - mean) / stdDev, 2));
 }
   
-    onMount(() => {
-      loadData();
-    });
-    
+   
+onMount(() => {
+  loadData();
+});
 
   </script>
   

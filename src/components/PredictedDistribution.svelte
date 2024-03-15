@@ -13,32 +13,37 @@ const margin = { top: 10, right: 30, bottom: 30, left: 30 };
   const maxReboundPct = writable(1);
 
 
+
   const mu2 = writable(0);
   const sigma2 = writable(0);
   const minReboundPct2 = writable(0);
   const maxReboundPct2 = writable(1);
-  let randomData2; // This will store the random data points from the second CSV
+  let centerData; // This will store the random data points from the second CSV
 
 let svg;
 let x; // Will set these scales after SVG is created
 let y;
-let randomData; // This will store the random data points
+let pointguardData; // This will store the random data points
 
 // Modify the parsing function to only use 'ReboundPct'
-function parseRow(d) {
-    return {
-      x: +d.ReboundPct, // Convert 'ReboundPct' to number
-      y: 0  // Set y to 0 or any other fixed value you need for visualization
-    };
-  }
+
 
   onMount(async () => {
     // Replace this with the actual path to your CSV file
-    const csvUrl = '/center.csv'; // Adjust based on where you can serve this file
-    randomData = await d3.csv(csvUrl, parseRow);
+   
 
-    let minPct = d3.min(randomData, d => d.x);
-    let maxPct = d3.max(randomData, d => d.x);
+    
+    const centerRes = await fetch('/center.csv'); 
+
+    const centerCsv = await centerRes.text();
+
+    centerData = d3.csvParse(centerCsv, d3.autoType)
+    console.log(centerData); // Check for any NaN values or unexpected formats
+
+    
+
+    let minPct = d3.min(centerData, d => d.ReboundPct);
+    let maxPct = d3.max(centerData, d => d.ReboundPct);
     minReboundPct.set(minPct);
     maxReboundPct.set(maxPct);
     // Initialize mu and sigma with reasonable defaults
@@ -53,12 +58,26 @@ function parseRow(d) {
 
 
      // Load the second CSV file
-     const csvUrl2 = '/point_guard.csv'; // Adjust this to the path of your second CSV file
-    randomData2 = await d3.csv(csvUrl2, parseRow);
+     
+    const pgRes = await fetch('/point_guard.csv'); 
+
+    const pgCsv = await pgRes.text();
+
+    pointguardData = d3.csvParse(pgCsv, d3.autoType)
+    console.log(pointguardData); // Similarly, check this dataset
+    if (centerData.length > 0) {
+  console.log("First entry:", centerData[0]);
+  console.log("x value of the first entry:", centerData[0].x);
+  console.log("y value of the first entry:", centerData[0].y);
+}
+if (centerData.length > 0) {
+  console.log("Type of x:", typeof centerData[0].x);
+  console.log("Type of y:", typeof centerData[0].y);
+}
 
     // Calculate range and initial values for the second dataset
-    let minPct2 = d3.min(randomData2, d => d.x);
-    let maxPct2 = d3.max(randomData2, d => d.x);
+    let minPct2 = d3.min(pointguardData, d => d.ReboundPct);
+    let maxPct2 = d3.max(pointguardData, d => d.ReboundPct);
     minReboundPct2.set(minPct2);
     maxReboundPct2.set(maxPct2);
     mu2.set((minPct2 + maxPct2) / 2);
@@ -76,7 +95,7 @@ function parseRow(d) {
     let x = extentX[0] + i * step; // Start from the minimum x value
     let exponent = -Math.pow(x - mu, 2) / (2 * Math.pow(sigma, 2));
     let y = (1 / (sigma * Math.sqrt(2 * Math.PI))) * Math.exp(exponent);
-    data.push({ x, y });
+    data.push(({ x: x, y: y }));
   }
   return data;
 }
@@ -99,14 +118,14 @@ function parseRow(d) {
 
   // Determine the extent for the x-axis based on both datasets
   let extentX;
-  if (randomData && randomData2) {
-    const extentX1 = d3.extent(randomData, d => d.x);
-    const extentX2 = d3.extent(randomData2, d => d.x);
+  if (centerData && pointguardData) {
+    const extentX1 = d3.extent(centerData, d => d.ReboundPct);
+    const extentX2 = d3.extent(pointguardData, d => d.ReboundPct);
     extentX = [Math.min(extentX1[0], extentX2[0]), Math.max(extentX1[1], extentX2[1])];
-  } else if (randomData) {
-    extentX = d3.extent(randomData, d => d.x);
-  } else if (randomData2) {
-    extentX = d3.extent(randomData2, d => d.x);
+  } else if (centerData) {
+    extentX = d3.extent(centerData, d => d.ReboundPct);
+  } else if (pointguardData) {
+    extentX = d3.extent(pointguardData, d => d.ReboundPct);
   } else {
     // If neither dataset is available, return early
     return;
@@ -154,11 +173,11 @@ legend.append('text')
   .style('text-anchor', 'start')
   .text('Centers');
   const line = d3.line()
-    .x(d => x(d.x))
-    .y(d => y(d.y));
+  .x(d => x(d.ReboundPct)) // Ensure x(d.x) returns a number for all d
+  .y(d => y(d.y)); // Similarly, ensure y(d.y) returns a number
 
   // Draw curves and points for the first dataset
-  if (randomData) {
+  if (centerData) {
     const gaussianCurveData = generateGaussianCurveData(muValue, sigmaValue, extentX, 1000);
     svg.append("path")
       .datum(gaussianCurveData)
@@ -167,17 +186,17 @@ legend.append('text')
       .attr("d", line);
 
     svg.selectAll(".random-dot")
-      .data(randomData)
+      .data(centerData)
       .enter().append("circle")
       .attr("class", "random-dot")
-      .attr("cx", d => x(d.x))
+      .attr("cx", d => x(d.ReboundPct))
       .attr("cy", height - margin.bottom)
       .attr("r", 3)
       .style("fill", "#69b3a2");
   }
 
   // Draw curves and points for the second dataset
-  if (randomData2) {
+  if (pointguardData) {
     const gaussianCurveData2 = generateGaussianCurveData(mu2Value, sigma2Value, extentX, 1000);
     svg.append("path")
       .datum(gaussianCurveData2)
@@ -187,26 +206,22 @@ legend.append('text')
 
     // You may want to use a different class or fill style for these points
     svg.selectAll(".random-dot2")
-      .data(randomData2)
+      .data(pointguardData)
       .enter().append("circle")
       .attr("class", "random-dot2")
-      .attr("cx", d => x(d.x))
+      .attr("cx", d => x(d.ReboundPct))
       .attr("cy", height - margin.bottom)
       .attr("r", 3)
       .style("fill", "#404080");
   }
  
 }
-$: if (svg && (randomData || randomData2)) {
+$: if (svg && (centerData || pointguardData)) {
     update($mu, $sigma, $mu2, $sigma2);
 }
 
 
 </script>
-
-
-
-
 
 
 <main>

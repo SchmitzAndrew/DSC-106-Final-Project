@@ -10,17 +10,33 @@
   let pointGuardsData = [];
 
   onMount(async () => {
-    const centersResponse = await fetch(`${base}/center.json`);
-    centersData = await centersResponse.json();
+    try {
+        const centerRes = await fetch('/center.csv');
+        const centerCsv = await centerRes.text();
+        centersData = d3.csvParse(centerCsv, d3.autoType);
 
-    const pointGuardsResponse = await fetch(`${base}/point_guard.json`);
-    pointGuardsData = await pointGuardsResponse.json();
-  });
+        const pgRes = await fetch('/point_guard.csv'); // Make sure this is the correct file
+        const pgCsv = await pgRes.text();
+        pointGuardsData = d3.csvParse(pgCsv, d3.autoType);
+    } catch (error) {
+        console.error('Error loading or parsing data:', error);
+    }
+    await loadData();
+    // Now you can be sure loadData is using the fetched and parsed data
+    
+});
 
   // Function to calculate mean
   function mean(data) {
-    return d3.mean(data, d => +d.ReboundPct);
-  }
+   
+   
+    const meanReboundPct = d3.mean(data, d => {
+        
+        return +d.ReboundPct;
+    });
+
+    return meanReboundPct;
+}
 
   // Function to calculate standard deviation
   function standardDeviation(data, mean) {
@@ -57,12 +73,15 @@
       .domain([0, d3.max(data, d => +d.Index)])
       .range([height, 0]);
 
-    svg = d3.select("#plinkoPlot")
-      .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-        .attr("transform", `translate(${margin.left},${margin.top})`);
+      d3.select("#plinkoPlot svg").remove();
+
+// Append a new svg to the div
+svg = d3.select("#plinkoPlot")
+    .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
 
     // Add the x-axis
     svg.append("g")
