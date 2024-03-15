@@ -11,11 +11,11 @@
 
   onMount(async () => {
     try {
-        const centerRes = await fetch('/center.csv');
+        const centerRes = await fetch('center.csv');
         const centerCsv = await centerRes.text();
         centersData = d3.csvParse(centerCsv, d3.autoType);
 
-        const pgRes = await fetch('/point_guard.csv'); // Make sure this is the correct file
+        const pgRes = await fetch('point_guard.csv'); // Make sure this is the correct file
         const pgCsv = await pgRes.text();
         pointGuardsData = d3.csvParse(pgCsv, d3.autoType);
     } catch (error) {
