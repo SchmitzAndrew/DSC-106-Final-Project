@@ -3,15 +3,11 @@
   import * as d3 from 'd3';
   import { onMount } from 'svelte';
 
-  import PredictedDistribution from '/components/PredictedDistribution.svelte';
-  import ActualDistribution from '/components/ActualDistribution.svelte';
-  import PlayerPredicter from '/components/PlayerPredicter.svelte';
+  import PredictedDistribution from '../components/PredictedDistribution.svelte';
+  import ActualDistribution from '../components/ActualDistribution.svelte';
+  import PlayerPredicter from '../components/PlayerPredicter.svelte';
 
-  let svg;
-  let sections = [];
-  let currentInView = -1;
-  let width = 960;  // define the width
-  let height = 500; // define the height
+
 
   
 </script>
