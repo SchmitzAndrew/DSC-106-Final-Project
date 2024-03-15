@@ -1,5 +1,5 @@
 <script>
-  import * as d3 from 'd3';
+  
   import { onMount } from 'svelte';
   import centersData from './center.json';
   import pointGuardsData from './point_guard.json';

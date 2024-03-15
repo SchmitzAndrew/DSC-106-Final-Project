@@ -1,5 +1,6 @@
 <script>
   import { base } from '$app/paths';
+  import * as d3 from 'd3';
   import { onMount } from 'svelte';
   import IntroContent from '../components/IntroContent.svelte';
   import PredictedDistribution from '../components/PredictedDistribution.svelte';
