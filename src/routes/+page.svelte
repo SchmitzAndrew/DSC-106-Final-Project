@@ -207,43 +207,11 @@
 </div>
 
 <style>
-  .navigation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    background-color: #f8f8f8;
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-
-  .navigation button {
-    font-size: 18px;
-    padding: 5px 10px;
-    border: none;
-    background-color: #e7e7e7;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  .navigation button:hover {
-    background-color: #dcdcdc;
-  }
-
-
-
   .box.in-view {
     transform: scale(1);
   }
 
-  /* Increase font size in IntroContent and Content components */
-  .IntroContent p, .Content p {
-    font-size: 20px; /* Adjust the size as needed */
-  }
+
   .text-content h2 {
     font-size: 40px;
     margin-bottom: 16px;
@@ -266,10 +234,7 @@
   display: block; /* Renders the image as a block-level element */
   margin: 0 auto; /* Centers the image within the section */
 }
-.scrolling-container {
-  overflow-y: auto; /* Allows for normal scrolling */
-  background-color: #D3D3D3;
-}
+
 
 .box {
   margin-bottom: 2rem; /* Adds space between sections */
