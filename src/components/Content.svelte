@@ -37,9 +37,10 @@
     After you get through all the matches you are left with the equations below. For those who are interested in the full derivations you can view them
     <a
       href="https://medium.com/swlh/gaussian-distribution-and-maximum-likelihood-estimate-method-step-by-step-e4f6014fa83e"
-      >here.</a
-    >
+      >here.</a>
   </p>
+
+  
 
   <div>
     <div class="formula">
