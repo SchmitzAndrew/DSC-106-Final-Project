@@ -41,12 +41,12 @@
       const centerRes = await fetch('center.csv');
       const centerCsv = await centerRes.text();
       centers = d3.csvParse(centerCsv, d3.autoType);
-      console.log(centers)
+      
 
       const pgRes = await fetch('point_guard.csv'); // Make sure this is the correct file
       const pgCsv = await pgRes.text();
       pointGuards = d3.csvParse(pgCsv, d3.autoType);
-      console.log(pointGuards)
+      
   
       const data = centers.map(d => ({...d, type: 'center'}))
         .concat(pointGuards.map(d => ({...d, type: 'pointGuard'})));
@@ -156,13 +156,12 @@ addLegend(svg, width - margin.left - margin.right, height - margin.top - margin.
     .attr("stroke-width", 2)
     .attr("stroke", "red");
 
-    console.log('inputValue:', inputValue);
-  console.log('Means and StDevs:', centersMean, centersStdDev, pointGuardsMean, pointGuardsStdDev);
+   
 
   // Calculate the Gaussian probability density for the input value
   const centersPDF = gaussianPDF(inputValue, centersMean, centersStdDev);
   const pointGuardsPDF = gaussianPDF(inputValue, pointGuardsMean, pointGuardsStdDev);
-  console.log('centersPDF:', centersPDF, 'pointGuardsPDF:', pointGuardsPDF);
+
 
   if (!isNaN(centersMean) && !isNaN(centersStdDev) && !isNaN(pointGuardsMean) && !isNaN(pointGuardsStdDev)) {
     const centersPDF = gaussianPDF(inputValue, centersMean, centersStdDev);
@@ -173,7 +172,7 @@ addLegend(svg, width - margin.left - margin.right, height - margin.top - margin.
   // Apply Bayes' theorem to calculate the posterior probabilities
   const postProbCenter = centersPDF * PY1 / (centersPDF * PY1 + pointGuardsPDF * PY0);
   const postProbPointGuard = pointGuardsPDF * PY0 / (centersPDF * PY1 + pointGuardsPDF * PY0);
-  console.log('postProbCenter:', postProbCenter, 'postProbPointGuard:', postProbPointGuard);
+
 
   // Display the prediction based on which probability is higher
   predictionText = postProbCenter > postProbPointGuard ? 'Center' : 'Point Guard';

@@ -64,16 +64,7 @@ let pointguardData; // This will store the random data points
     const pgCsv = await pgRes.text();
 
     pointguardData = d3.csvParse(pgCsv, d3.autoType)
-    console.log(pointguardData); // Similarly, check this dataset
-    if (centerData.length > 0) {
-  console.log("First entry:", centerData[0]);
-  console.log("x value of the first entry:", centerData[0].x);
-  console.log("y value of the first entry:", centerData[0].y);
-}
-if (centerData.length > 0) {
-  console.log("Type of x:", typeof centerData[0].x);
-  console.log("Type of y:", typeof centerData[0].y);
-}
+  
 
     // Calculate range and initial values for the second dataset
     let minPct2 = d3.min(pointguardData, d => d.ReboundPct);
@@ -173,16 +164,24 @@ legend.append('text')
   .style('text-anchor', 'start')
   .text('Centers');
   const line = d3.line()
-  .x(d => x(d.ReboundPct)) // Ensure x(d.x) returns a number for all d
-  .y(d => y(d.y)); // Similarly, ensure y(d.y) returns a number
+  .x(d => {
+    console.log(`x value: ${d.x}, scaled: ${x(d.x)}`);
+    return x(d.x);
+  })
+  .y(d => {
+    console.log(`y value: ${d.y}, scaled: ${y(d.y)}`);
+    return y(d.y);
+  });
 
   // Draw curves and points for the first dataset
   if (centerData) {
-    const gaussianCurveData = generateGaussianCurveData(muValue, sigmaValue, extentX, 1000);
+    const gaussianCurveData = generateGaussianCurveData(muValue, sigmaValue, extentX, 100);
+    console.log(gaussianCurveData); 
     svg.append("path")
       .datum(gaussianCurveData)
       .attr("fill", "none")
       .attr("stroke", "#69b3a2")
+      .attr("stroke-width", 2)
       .attr("d", line);
 
     svg.selectAll(".random-dot")
@@ -193,11 +192,13 @@ legend.append('text')
       .attr("cy", height - margin.bottom)
       .attr("r", 3)
       .style("fill", "#69b3a2");
+
+   
   }
 
   // Draw curves and points for the second dataset
   if (pointguardData) {
-    const gaussianCurveData2 = generateGaussianCurveData(mu2Value, sigma2Value, extentX, 1000);
+    const gaussianCurveData2 = generateGaussianCurveData(mu2Value, sigma2Value, extentX, 100);
     svg.append("path")
       .datum(gaussianCurveData2)
       .attr("fill", "none")
@@ -216,7 +217,7 @@ legend.append('text')
   }
  
 }
-$: if (svg && (centerData || pointguardData)) {
+$: if (svg) {
     update($mu, $sigma, $mu2, $sigma2);
 }
 
