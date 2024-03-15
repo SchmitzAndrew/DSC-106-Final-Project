@@ -2,7 +2,7 @@
   import { base } from '$app/paths';
   import * as d3 from 'd3';
   import { onMount } from 'svelte';
-  import * as d3 from 'd3';
+
   import PredictedDistribution from '../components/PredictedDistribution.svelte';
   import ActualDistribution from '../components/ActualDistribution.svelte';
   import PlayerPredicter from '../components/PlayerPredicter.svelte';
