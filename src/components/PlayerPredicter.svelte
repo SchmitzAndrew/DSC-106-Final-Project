@@ -243,7 +243,7 @@ function gaussianPDF(x, mean, stdDev) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 1em; /* Adjust this value to reduce space between controls and the plot */
+    margin-bottom: 0em; /* Adjust this value to reduce space between controls and the plot */
   }
 
   #plinkoPlot {
@@ -251,7 +251,7 @@ function gaussianPDF(x, mean, stdDev) {
   }
 
   input, button {
-    width: 100%; /* Full width if you want */
+    width: 50%; /* Full width if you want */
     margin-bottom: 0.5em; /* Space between input fields and button */
   }
 

@@ -1,50 +1,22 @@
 <script>
   import { base } from '$app/paths';
   import { onMount } from 'svelte';
-  import IntroContent from '../components/IntroContent.svelte';
+  import * as d3 from 'd3';
   import PredictedDistribution from '../components/PredictedDistribution.svelte';
   import ActualDistribution from '../components/ActualDistribution.svelte';
-  import Content from '../components/Content.svelte';
-  import ActualDistributionText from '../components/ActualDistributionText.svelte';
   import PlayerPredicter from '../components/PlayerPredicter.svelte';
 
-
+  let svg;
   let sections = [];
   let currentInView = -1;
+  let width = 960;  // define the width
+  let height = 500; // define the height
 
-  function scrollToSection(index) {
-    sections[index].scrollIntoView({ behavior: 'smooth' });
-  }
-
-  onMount(() => {
-    sections = document.querySelectorAll('.box');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          currentInView = parseInt(entry.target.dataset.index, 10);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    sections.forEach((section, index) => {
-      // Ensure the data-index is set here to match the section
-      section.dataset.index = index;
-      observer.observe(section);
-    });
-    svg = d3.select("#chart").append("svg")
-    .attr("viewBox", `0 0 ${width} ${height}`) // Add this line
-    .attr("preserveAspectRatio", "xMidYMid meet") // Add this line
-    .attr("width", "100%") // Adjust to "100%" for responsiveness
-    .attr("height", "100%"); // Adjust to "100%" for responsiveness
-
-    return () => {
-      observer.disconnect();
-    };
-  });
+  
 </script>
 
 
-<div class="scrolling-container">
+
 
   <section class="box" data-index={0}>
     <div class="text-content">
@@ -79,7 +51,7 @@
     <div class="text-content">
       <h2>Looking at Real Data</h2>
       <p>Below is data sampled from the NBA showing the average number of rebounds center and points guards gotten
-        in the season. As you can see you are able to input your own Mean and Standard deviation. You will
+        in a random NBA season. As you can see you are able to input your own Means and Standard deviations. You will
         be playing the role as a Data Scientist in trying to make a model distribution that best fits the 
         data. Go ahead and see how well you do!!! Then whenever you feel confident in your answer, compare 
         yours with the best possible fit.</p>
@@ -92,83 +64,57 @@
     <div class="text-content">
       <p> In the following visualization, you will be able to find the rebound percentage for point guards in purple and 
       the rebound percentage for center players in light blue. By looking at their distribution in the x-axis,
-      try to guess how their Gaussian distributions would look like.</p>
+      try to guess how their best fit Gaussian distributions would look like.</p>
+      <PredictedDistribution />
       <!-- More paragraphs as needed -->
     </div>
   </section>
 
   
 
-  {#each [PredictedDistribution] as Component, index (index)}
-    <section class="box" class:in-view={currentInView === index}>
-      <svelte:component this={Component} />
-    </section>
-  {/each}
+
+  <section class="box" data-index={4}>
+    <div class="text-content">
+      <p> Let's see how your prediction for the distributions of these two positions compares to the actual distributions. Click on "Show Distribution" to reveal
+        the true distributions.</p>
+        <ActualDistribution />
+      <!-- More paragraphs as needed -->
+    </div>
+  </section>
+
+  
+
+
+
+
+ 
 
   <section class="box" data-index={5}>
     <div class="text-content">
-      <p> Let's see how your prediction for the distributions of these two positions and their corresponding 
-        rebound percenatge compares to the actual distributions. Click on "Show Distribution" to reveal
-        the true distributions.</p>
-      <!-- More paragraphs as needed -->
-    </div>
-  </section>
-
-  {#each [ActualDistribution] as Component, index (index)}
-    <section class="box" class:in-view={currentInView === index}>
-      <svelte:component this={Component} />
-    </section>
-  {/each}
-
-  <section class="box" data-index={10}>
-    <div class="text-content">
-      <p> 
-      </p>
-      <!-- More paragraphs as needed -->
-    </div>
-  </section>
-
-  {#each [PlayerPredicter] as Component, index (index)}
-    <section class="box" class:in-view={currentInView === index}>
-      <svelte:component this={Component} />
-    </section>
-  {/each}
-
-  <section class="box" data-index={12}>
-    <div class="text-content">
-      <p> Now that you've looked at both distributions, in the visualization above input a "Rebound
-        Percentage". Using MLE, our visualization will tell you which distribution your player's statistics would belong to.
-      </p>
-      <!-- More paragraphs as needed -->
-    </div>
-  </section>
-
-  <section class="box" data-index={13}>
-    <div class="text-content">
       <p> As you messed around with different parameter inputs you may have observed some inputs gave better
         results than others. Is there a way to quantify this without guessing and checking? Luckily ,
-         Data Scientists have figured out how to quantify this step to find the “best fit”. First step 
-         is to assume the data are all sampled independently. Next let's say that p(xi, mu, sigma) is
-          the probability of seeing xi with the parameters mu and sigma. Then p(x1, mu, sigma) *  p(x2, mu, sigma) *... * p(xn, mu, sigma) 
-          tells us the likelihood of seeing X1, x2,..., xn at the sametime. We can think of this as a function of mu and sigma. 
-          The likelihood function takes in a mu and sigma and returns the probability that data was generated by the inputted mu and sigma.</p>
+         some clever people have figured out how to quantify this step. First
+         is to assume the data are all sampled independently. Next let's say that P(xi, Mu, Sigma) is
+          the probability of seeing xi, a single data point, with the parameters Mu and Sigma. Then P(x1, Mu, Sigma) *  P(x2, Mu, Sigma) *... * P(xn, Mu, Sigma) 
+          tells us the likelihood of seeing x1, x2,..., xn, the entire data set, at the sametime. We can think of this as a function of Mu and Sigma. 
+          The likelihood function takes in a Mu and Sigma and returns the probability that data was generated by the inputted Mu and Sigma.</p>
       <!-- More paragraphs as needed -->
     </div>
   </section>
 
-  <section class="box" data-index={14}>
+  <section class="box" data-index={6}>
     <div class="text-content">
-      <p> The goal of creating this likelihood function is to maximize it by finding the mu and sigma that 
-        gives us the highest likelihood. One way is to take the partial derivatives, set them to 0 then 
-        solve for mu and sigma.</p>
+      <p> The goal of creating this likelihood function is to maximize it by finding the Mu and Sigma that 
+        gives us the highest likelihood. One way some of you all know is by the use of good old calculus. Which is to take the partial derivatives of the likelihood function for Mu and Sigma, set them to 0 then 
+        solve for them.</p>
       <!-- More paragraphs as needed -->
     </div>
   </section>
 
-  <section class="box" data-index={14}>
+  <section class="box" data-index={7}>
     <div class="text-content">
       <p>
-        After you get through all the matches you are left with the equations below. For those who are interested in the full derivations you can view them
+        After you get through all the math you are left with the equations below. For those who are interested in the full derivations you can view them
         <a
           href="https://medium.com/swlh/gaussian-distribution-and-maximum-likelihood-estimate-method-step-by-step-e4f6014fa83e"
           >here.</a>
@@ -178,26 +124,68 @@
     </div>
   </section>
 
-  <section class="box" data-index={14}>
+  <section class="box" data-index={8}>
     <div class="text-content">
-      <p> The mu maximum likelihood estimator is just the mean of the sampled data. And the sigma maximum likelihood estimator is the standard deviation of data but using the mu mle.
+      <p> The mu maximum likelihood estimator is just the mean of the sampled data. And the Sigma maximum likelihood estimator is the standard deviation of data but using the mu mle.
         By calculating these parameters from the data we can now fit a gaussian that best fits our data.
     </p>
       <!-- More paragraphs as needed -->
     </div>
   </section>
   
-  <section class="box" data-index={14}>
+  <section class="box" data-index={9}>
     <div class="text-content">
-      <p> Ok but I know you are wondering how this helps you predict things in nature. Well we can use this to estimate probability densities. But how? Well, our example of figuring how to predict whether a NBA player is a point guard or forward by the number of rebounds can give us insight on how it is done. We will create two separate fitted gaussians for each position. So we will have P(X| Y = PG) and P(X| Y = Forward). Then multiple each of those probabilities by P(Y=PG) and p(Y=Forward) respectively. Now with those gaussians how would we predict the position of a player? Well we will see which probability is greater at x.
+      <p> Ok but I know you are wondering how does this help you predict nature. 
+        Well we can use this to estimate probability densities then by using Bayes Theorem. 
+        But how? Well, back to our data set of centers and point guards. We will create a simple way  
+        to predict whether a NBA player is a point guard or center by the number of rebounds. 
+        We will create two separate fitted gaussians for each position like you seen before. 
+        So we will have P(X| Y = PG) and P(X| Y = Center). Then multiply each of those distributions
+        by P(Y=PG) and P(Y=Center) respectively. Now with those gaussians how would we predict the 
+        position of a player? Well all you need to do is compare P(X| Y = PG)P(Y=PG) and P(X| Y = Center)P(Y=Center).
+        Which ever has the higher probability then that will be the predictions. 
       </p>
       <!-- More paragraphs as needed -->
     </div>
   </section>
 
-  <section class="box" data-index={14}>
+  <section class="box" data-index={10}>
     <div class="text-content">
-      <p> Some of you who are more familiar with statistics and math may wonder why would someone estimate the densities 𝑝𝑋 (𝑥 | 𝑌 = 0) and 𝑝𝑋 (𝑥 | 𝑌 = 1) using parametrically instead of using a non-parametric approach like using histograms. Well one reason is that histograms suffer from the curse of dimensionality meaning when there are more dimensions (aka. features) histograms will require significantly much more data to have a good fit. Meaning if the sample is low and you can make a fair assumption about the underlying true density of the data then a parametric approach might suit you better. Predicting nature is a very complicated process, one that we may never fully understand or be able to do but by having a variety of tools it allows us to do our best and perhaps one day we may get really close to predict nature.
+      <p> Try it yourself below. We already created the P(X| Y = PG)P(Y=PG) and P(X| Y = Center)P(Y=Center) distributions
+        for you. All you have to do is input the average rebounds of a center or point guard you know or look
+       one up. Then click submit and see the predictions. Did we get it right?
+      </p>
+      <PlayerPredicter />
+      <!-- More paragraphs as needed -->
+    </div>
+  </section>
+
+
+
+
+<section class="box" data-index={11}>
+  <div class="text-content">
+    <p> As you can see we did not use some sort of magic or insane algorithm to create our predictions.
+      We simply used MLE to estimate probability densities so we could use Bayes Theorem to find the probabilities
+      of whether the player with the inputted rebound percentage was a center or point guard and chose the higher probability
+      to make our prediction.
+    </p>
+    <!-- More paragraphs as needed -->
+  </div>
+</section>
+
+  <section class="box" data-index={12}>
+    <div class="text-content">
+      <p> Some of you who are more familiar with statistics and math may wonder why would someone 
+        estimate the densities P(𝑥 | 𝑌 = 0) and P(𝑥 | 𝑌 = 1) using a parametric approach instead of 
+        using a non-parametric approach like using histograms. Well one reason is that histograms 
+        suffer from the curse of dimensionality meaning when there are more dimensions (aka. features) 
+        histograms will require significantly much more data to have a good fit. Meaning if the sample 
+        is low and you can make a fair assumption about the underlying true density of the data then a 
+        parametric approach might suit you better. Predicting nature is a very complicated process since 
+        we will never fully understand how to quanitfy all the random interactions that happens that sum up
+        into in a single outcome or outcomes. But by having a variety of tools like MLE it allows 
+        us to predict nature the best we can and perhaps one day we may get really close to predict nature.
       </p>
       <!-- More paragraphs as needed -->
     </div>
@@ -211,7 +199,7 @@
   </footer>
 
 
-</div>
+
 
 <style>
   .box.in-view {
