@@ -38,12 +38,12 @@
 
     let isLoadingData = true;
     async function loadData() {
-      const centerRes = await fetch('/center.csv');
+      const centerRes = await fetch('center.csv');
       const centerCsv = await centerRes.text();
       centers = d3.csvParse(centerCsv, d3.autoType);
       console.log(centers)
 
-      const pgRes = await fetch('/point_guard.csv'); // Make sure this is the correct file
+      const pgRes = await fetch('point_guard.csv'); // Make sure this is the correct file
       const pgCsv = await pgRes.text();
       pointGuards = d3.csvParse(pgCsv, d3.autoType);
       console.log(pointGuards)

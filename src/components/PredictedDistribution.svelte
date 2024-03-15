@@ -33,7 +33,7 @@ let pointguardData; // This will store the random data points
    
 
     
-    const centerRes = await fetch('/center.csv'); 
+    const centerRes = await fetch('center.csv'); 
 
     const centerCsv = await centerRes.text();
 
@@ -59,7 +59,7 @@ let pointguardData; // This will store the random data points
 
      // Load the second CSV file
      
-    const pgRes = await fetch('/point_guard.csv'); 
+    const pgRes = await fetch('point_guard.csv'); 
 
     const pgCsv = await pgRes.text();
 
