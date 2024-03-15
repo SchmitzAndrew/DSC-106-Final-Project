@@ -203,6 +203,13 @@
     </div>
   </section>
 
+  <footer class="footer">
+    <p>Created by Hector Gallo, Andrew Schmitz, and Diego Silva</p>
+    <a href="https://github.com/SchmitzAndrew/DSC-106-Final-Project" target="_blank">
+      <img src="{base}/github-logo.png" alt="GitHub Logo" class="github-logo"/>
+    </a>
+  </footer>
+
 
 </div>
 
@@ -217,25 +224,24 @@
     margin-bottom: 16px;
     text-align: center;
   }
-
   .text-content p {
     font-size: 30px; /* Adjust the size as needed */
     padding: 0 20px; /* Add some padding around the text */
   }
   .mle-image {
-  max-width: 50%; /* Ensures the image is not wider than the container */
-  height: auto; /* Maintains the aspect ratio of the image */
-  display: block; /* Renders the image as a block-level element */
-  margin: 0 auto; /* Centers the image within the section */
-}
-.nba-image {
-  max-width: 15%; /* Ensures the image is not wider than the container */
-  height: auto; /* Maintains the aspect ratio of the image */
-  display: block; /* Renders the image as a block-level element */
-  margin: 0 auto; /* Centers the image within the section */
-}
-
-
+    max-width: 50%; /* Ensures the image is not wider than the container */
+    height: auto; /* Maintains the aspect ratio of the image */
+    display: block; /* Renders the image as a block-level element */
+    margin: 0 auto; /* Centers the image within the section */
+    border-radius: 10px; /* Adds gentle rounding to the image */
+  }
+  .nba-image {
+    max-width: 15%; /* Ensures the image is not wider than the container */
+    height: auto; /* Maintains the aspect ratio of the image */
+    display: block; /* Renders the image as a block-level element */
+    margin: 0 auto; /* Centers the image within the section */
+    border-radius: 10px; /* Adds gentle rounding to the image */
+  }
 .box {
   margin-bottom: 2rem; /* Adds space between sections */
   padding: 1rem; /* Additional padding within each section */
@@ -245,4 +251,30 @@
 .box:last-child {
   margin-bottom: 0;
 }
+
+.footer {
+    background-color: #333; /* Dark background for the footer */
+    color: #fff; /* Light text color for contrast */
+    text-align: center; /* Center the footer content */
+    padding: 20px 0; /* Add some padding above and below the content */
+    font-size: 16px; /* Adjust the font size as needed */
+    border-top: 4px solid #444; /* Add a top border for a bit of visual separation */
+  }
+
+  .footer a {
+    color: #ddd; /* Slightly lighter color for links for contrast */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 10px; /* Add some horizontal spacing between links */
+  }
+
+  .footer a:hover {
+    color: #fff; /* Change link color on hover for a visual feedback */
+  }
+
+  .footer .github-logo {
+    width: 24px; /* Adjust the size of the GitHub logo */
+    vertical-align: middle; /* Align the logo vertically with the text */
+    margin-right: 8px; /* Add some spacing to the right of the logo */
+    border-radius: 20%; /* Make the logo circular */    
+  }
 </style>
