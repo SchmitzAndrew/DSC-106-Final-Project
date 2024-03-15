@@ -1,4 +1,5 @@
 <script>
+  import { base } from '$app/paths';
   import { onMount } from 'svelte';
   import IntroContent from '../components/IntroContent.svelte';
   import PredictedDistribution from '../components/PredictedDistribution.svelte';
@@ -54,7 +55,7 @@
         outcomes of nature. A major drawback when it comes to predicting things in nature is that it’s rare 
         that we have the true distribution of where the data came from. Luckily there is a solution to this. 
         One approach that data scientists use is they assume the data comes from some parametric density given the data is continuous.</p>
-        <img src="/gaussian.png" alt="Descriptive text about the image" class="mle-image"/>
+        <img src="{base}/gaussian.png" alt="A graph of a normal distribution" class="mle-image"/>
       <!-- More paragraphs as needed -->
     </div>
   </section>
@@ -82,7 +83,7 @@
         be playing the role as a Data Scientist in trying to make a model distribution that best fits the 
         data. Go ahead and see how well you do!!! Then whenever you feel confident in your answer, compare 
         yours with the best possible fit.</p>
-        <img src="/nba-logo-transparent.png" alt="Descriptive text about the image" class="nba-image"/>
+        <img src="{base}/nba-logo-transparent.png" alt="The nba logo" class="nba-image"/>
       <!-- More paragraphs as needed -->
     </div>
   </section>
@@ -172,7 +173,7 @@
           href="https://medium.com/swlh/gaussian-distribution-and-maximum-likelihood-estimate-method-step-by-step-e4f6014fa83e"
           >here.</a>
       </p>
-      <img src="/equations.png" alt="Descriptive text about the image" class="mle-image"/>
+      <img src="{base}/equations.png" alt="Equations for MLE" class="mle-image"/>
       <!-- More paragraphs as needed -->
     </div>
   </section>
