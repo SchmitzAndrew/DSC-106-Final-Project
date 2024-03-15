@@ -3,12 +3,11 @@
     import { onMount } from 'svelte';
   
     let svg;
-   
     let inputValue = 0; // To hold the user's input value
 
     let x;
     let height;
-   
+
 
     const PY1 = 0.51; // Replace with your actual value for P(Y=1)
     const PY0 = 0.49; // Replace with your actual value for P(Y=0)

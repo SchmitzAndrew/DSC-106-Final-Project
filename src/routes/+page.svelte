@@ -27,8 +27,7 @@
       });
     }, { threshold: 0.5 });
 
-    let width = 1000;
-    let height = 500;
+    
 
     sections.forEach((section, index) => {
       // Ensure the data-index is set here to match the section
