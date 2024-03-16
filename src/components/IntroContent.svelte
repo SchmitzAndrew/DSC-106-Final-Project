@@ -6,30 +6,30 @@
   <h1>Maximum Likelihood Estimation</h1>
 
   <p>
-    Have you ever wanted to be able to predict things in nature? Whether it is the species of an animal,
-    roll of a die,  or anything that has a specific class. It might surprise you that you are able to 
-    do this using some math you may already know. But there is one issue when it comes to predicting 
-    outcomes of nature. A major drawback when it comes to predicting things in nature is that it’s rare 
-    that we have the true distribution of where the data came from. Luckily there is a solution to this. 
-    One approach that data scientists use is they assume the data comes from some parametric density given the data is continuous.
+    Have you ever wanted to predict phenomena in nature? Whether it's identifying the species of an animal,
+    the roll of a die, or categorizing objects into different groups, it might surprise you that 
+    you can achieve this using some mathematics you may already be familiar with. However, there is a significant challenge when it comes to predicting 
+    natural outcomes. A major drawback is that it’s rare 
+    to have the true distribution of the data's origin. Fortunately, there is a solution to this problem. 
+    One approach that data scientists use is to assume the data originates from a certain parametric density, provided the data is continuous.
   </p>
 
   <p>
-    To start Data Scientists first make an assumption that being that the true, underlying density has a 
-    certain form. A common assumption used is that the true distribution is Gaussian or also known as 
-    normal distribution. With this assumption there are two parameters that determine the shape of the 
-    distribution being mean and standard deviation. The mean controls the center and the standard 
-    deviation controls the width of the distribution. But because we do not know the true density we 
-    have to make assumptions on the parameters. This allows us to make an estimation to what the true 
-    distribution may look like.
+    To begin, data scientists first assume that the true, underlying density has a 
+    specific form. A common assumption is that the true distribution is Gaussian, also known as 
+    the normal distribution. With this assumption, there are two parameters that determine the shape of the 
+    distribution: the mean and the standard deviation. The mean controls the center, and the standard 
+    deviation controls the width of the distribution. However, because we do not know the true density, we 
+    must make assumptions about the parameters. This allows us to estimate what the true 
+    distribution might look like.
   </p>
 
   <p>
-    Below is data sampled from the NBA showing the average number of rebounds each player has gotten
-    in the season. As you can see you are able to input your own Mean and Standard deviation. You will
-    be playing the role as a Data Scientist in trying to make a model distribution that best fits the 
-    data. Go ahead and see how well you do!!! Then whenever you feel confident in your answer, compare 
-    yours with the best possible fit.
+    Below is data sampled from the NBA, showing the average number of rebounds each player has obtained
+    in the season. Using our website, you  can input your own mean and standard deviation. You will
+    play the role of a Data Scientist, attempting to create a model distribution that best fits the 
+    data. Go ahead and see how well you do! Then, whenever you feel confident in your answer, compare 
+    it with the best possible fit.
   </p>
 </main>
 
